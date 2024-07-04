@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Réseau Électrique</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.css">
+    <!-- Firebase SDK -->
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+      
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+      
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+      
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+      
+        // Your web app's Firebase configuration
+      
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      
+        const firebaseConfig = {
+      
+          apiKey: "AIzaSyC1neYYurBkDaIQH3Y6lXafrWlbclm-shg",
+      
+          authDomain: "gestion-reseau-te64.firebaseapp.com",
+      
+          projectId: "gestion-reseau-te64",
+      
+          storageBucket: "gestion-reseau-te64.appspot.com",
+      
+          messagingSenderId: "948884655120",
+      
+          appId: "1:948884655120:web:b773606a1b107ec4314e95",
+      
+          measurementId: "G-FTVWX8TC39"
+      
+        };
+      
+      
+        // Initialize Firebase
+      
+        const app = initializeApp(firebaseConfig);
+      
+        const analytics = getAnalytics(app);
+      
+      </script>
+</head>
+<body>
+    <h1>Gestion du Réseau Électrique</h1>
+    <div id="map" style="height: 600px;"></div>
+    <div id="form-container">
+        <form id="work-form">
+            <label for="company">Entreprise:</label>
+            <select id="company" name="company">
+                <option value="ETPM">ETPM</option>
+                <option value="COREBA">COREBA</option>
+                <option value="EIFFAGE">EIFFAGE</option>
+                <option value="CEGELEC">CEGELEC</option>
+                <option value="SPIE">SPIE</option>
+                <option value="SDEL">SDEL</option>
+            </select>
+            <label for="commune">Commune:</label>
+            <input type="text" id="commune" name="commune" required>
+            <label for="work-type">Type de Travaux:</label>
+            <input type="text" id="work-type" name="work-type" required>
+            <label for="start-date">Date de début:</label>
+            <input type="date" id="start-date" name="start-date" required>
+            <label for="end-date">Date de fin:</label>
+            <input type="date" id="end-date" name="end-date" required>
+            <label for="command">Commande d'éclairage public:</label>
+            <input type="text" id="command" name="command" required>
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+    <div id="calendar"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
